@@ -1,0 +1,7 @@
+.pagination-container {
+  margin: 20px 0 !important;
+}
+.pagination {
+  display: flex;
+  row-gap: 20px;
+}

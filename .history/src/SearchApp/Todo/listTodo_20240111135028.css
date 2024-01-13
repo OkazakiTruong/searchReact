@@ -1,0 +1,18 @@
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  padding: 10px;
+}
+th.numeric-order {
+  width: 80%;
+}
+
+h2 {
+  margin-bottom: 20px;
+}

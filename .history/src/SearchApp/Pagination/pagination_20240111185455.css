@@ -1,0 +1,13 @@
+.pagination-container {
+  margin: 20px 0 !important;
+}
+.pagination {
+  display: flex;
+  column-gap: 6px;
+}
+.pagination ul,
+li {
+  padding: 10px 20px;
+  background-color: aqua;
+  cursor: pointer;
+}

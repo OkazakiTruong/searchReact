@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+}
+table,
+th,
+td {
+  border: 1px solid #696969;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 16px;
+}
+th {
+  background-color: #77bec0;
+}
+th.todo-name {
+  width: 70%;
+}
+th.numeric-order {
+  width: 10%;
+}
+th.status {
+  width: 20%;
+}
+td.numeric-order {
+  text-align: center;
+}
+h2 {
+  margin-bottom: 20px;
+}
+td.none-todos {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}

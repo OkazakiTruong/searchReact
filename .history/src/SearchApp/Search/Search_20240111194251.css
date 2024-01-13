@@ -1,0 +1,25 @@
+input {
+  width: 80%;
+  padding: 10px;
+}
+button {
+  width: 20%;
+  cursor: pointer;
+  background-color: #77bec0;
+  border: #77bec0;
+  font-weight: 600;
+  font-size: 16px;
+}
+.search-container {
+  margin: 20px 0;
+}
+.search-bar {
+  display: flex;
+  width: 100%;
+}
+.search-suggest {
+  position: absolute;
+  width: 100%;
+  max-height: 400px;
+  min-height: 400px;
+}

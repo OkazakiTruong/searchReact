@@ -1,0 +1,11 @@
+.search-bar {
+  display: flex;
+  width: 100%;
+}
+input {
+  width: 80%;
+  padding: 10px;
+}
+button {
+  width: 20%;
+}
