@@ -9,8 +9,6 @@ export const SearchAppContainer = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [filter, setFilter] = useState({
-    _page: 1,
-    _limit: 10,
     title_like: "",
   });
   // const debounceDropDown = useRef(
@@ -20,12 +18,15 @@ export const SearchAppContainer = () => {
     const params = new URLSearchParams(filter).toString();
     //fetch api
     setIsLoading(true);
-    fetch(`https://jsonplaceholder.typicode.com/todos?${params}`, {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
+    fetch(
+      `https://jsonplaceholder.typicode.com/todos?${params}&_page=${currentPage}&_limit=10`,
+      {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    )
       .then((response) => {
         setTotalPage(Math.ceil(+response.headers.get("x-total-count") / 10));
         return response.json();
@@ -34,16 +35,16 @@ export const SearchAppContainer = () => {
         setIsLoading(false);
         setTodos(data);
       });
-  }, [filter]);
+  }, [currentPage, filter]);
   const handlePageClick = (event) => {
-    setFilter({ ...filter, _page: ++event.selected });
+    setCurrentPage(++event.selected);
   };
   const handleSearch = (event) => {
     const dataSearch = event.target.value;
-    setFilter({ ...filter, _page: 1, title_like: `${dataSearch.trim()}` });
+    setFilter({ ...filter, title_like: `${dataSearch.trim()}` });
   };
   const handleSubmit = (title) => {
-    setFilter({ ...filter, _page: 1, title_like: `${title.trim()}` });
+    setFilter({ ...filter, title_like: `${title.trim()}` });
   };
   return (
     <div>
